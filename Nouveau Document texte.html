@@ -7,8 +7,10 @@
 </head>
 <body>
     <script>
+//--------PARTIE 1 DES EXERCICEs------// 
+ 
 // exercice input 2 nombre et sortir le plus grand des deux
-const resultat1 = parseFloat(prompt("Donnez un nombre"));
+/*const resultat1 = parseFloat(prompt("Donnez un nombre"));
 const resultat2 = parseFloat(prompt("Donnez un nombre"));
 
 if (resultat1 > resultat2) {
@@ -29,8 +31,43 @@ const resultat5 = parseFloat(prompt("Donnez un nombre"));
 const resultat6 = parseFloat(prompt("Donnez un nombre"));
 const resultat7 = parseFloat(prompt("Donnez un nombre"));
 const tableau = [resultat5,resultat6,resultat7];
-alert(tableau.sort());
+alert(tableau.sort());*/
 
+//--------PARTIE 2 DES EXERCICES------//
+
+//choisir quel programme faire//
+
+const choix = parseFloat(prompt("Veux-tu faire le test 1, 2 ou 3 ?"));
+
+if(choix==1){ alert("bienvenue a l'exercice1")
+    const resultat1 = parseFloat(prompt("Donnez un nombre"));
+const resultat2 = parseFloat(prompt("Donnez un nombre"));
+
+if (resultat1 > resultat2) {
+    alert(resultat1);
+} else {
+    alert(resultat2);
+}}
+
+if(choix==2){alert("bienvenue dans l'exercice 2")
+    const resultat3 = parseFloat(prompt("Donnez un nombre"));
+const resultat4 = parseFloat(prompt("Donnez un nombre"));
+const produit = resultat4 * resultat3;
+const signe = Math.sign(produit)
+alert(signe)
+}
+
+
+if(choix==3){ alert("bienvenue dans l'exercice 3")
+    const resultat5 = parseFloat(prompt("Donnez un nombre"));
+const resultat6 = parseFloat(prompt("Donnez un nombre"));
+const resultat7 = parseFloat(prompt("Donnez un nombre"));
+const tableau = [resultat5,resultat6,resultat7];
+alert(tableau.sort());}
+
+if(choix > 3 || choix < 1){
+alert("erreur, rafraichir la page, choix en dehors des intervales")
+}
     </script>
 </body>
 </html>
