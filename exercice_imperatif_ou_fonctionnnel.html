@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+fetch('https://random-data-api.com/api/v2/users?size=10')
+        .then(function(res) { return res.json(); })
+        .then(function(donnees) {
+            donnees.map(function(donnee) {
+            h2: personne.prenom + ' ' + personne.nom,
+            });
+        });
+
+        const personnes = [
+    {
+        prenom: "Alice",
+        nom: "Cooper",
+        age: 80
+    },
+    {
+        prenom: "Bob",
+        nom: "Dylan",
+        age: 64
+    },
+    {
+        prenom: "Charles",
+        nom: "Trenet",
+        age: 76
+    },
+    {
+        prenom: "Diane",
+        nom: "Tell",
+        age: 56
+    },
+    {
+        prenom: "Ed",
+        nom: "Sheeran",
+        age: 35
+    }
+];
+
+// Programmation fonctionnelle
+personnes
+    // Première étape : Pour chaque personne, on retourne les textes qui seront affichés
+    .map(function(personne) {
+        return {
+            h2: personne.prenom + ' ' + personne.nom,
+            p: personne.age + ' ans'
+        }
+    })
+    // Deuxième étape : On crée des balises h2 et p, tout en renvoyant à la suite :
+    // Les deux balises, et les deux textes
+    .map(function(donnee) {
+        return {
+            baliseH2: document.createElement('h2'),
+            baliseP: document.createElement('p'),
+            h2: donnee.h2,
+            p: donnee.p
+        }
+    })
+    // Troisième étape : on met les textes dans les balises. Et on retourne les deux balises
+    .map(function(donnee) {
+        // Je mets dans la balise H2 le texte "prenom + nom"
+        donnee.baliseH2.textContent = donnee.h2;
+        // Je mets dans la balise P la texte "age"
+        donnee.baliseP.textContent = donnee.p;
+        return [
+            donnee.baliseH2,
+            donnee.baliseP
+        ]
+    })
+    // On crée une div autour de ces deux balises et on renvoie la div
+    .map(function(donnee) {
+        // Je crée une div
+        const div = document.createElement('div');
+        // J'ajoute la balise H2
+        div.appendChild(donnee[0]);
+        // J'ajoute la balise P
+        div.appendChild(donnee[1]);
+        // Je retourne la div
+        return div;
+    })
+    // Pour chacune de ces div, on l'ajoute au body.
+    .forEach(function(div) {
+        document.body.appendChild(div);
+    })
+    </script>
+</body>
+</html>
